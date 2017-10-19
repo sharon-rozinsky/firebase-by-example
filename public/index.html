@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Firebase By Example</title>    
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.css" />
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <div class="title">
+            <img src="firebase_logo.png">
+            <h1 class="brand">Firebase By Example</h1>            
+        </div>
+        <div class="wrapper">
+            <div class="titleInfo">
+                <h3>This page shows the following different Firebase features:</h3>
+                <ul>
+                    <li><i class="fa fa-info-circle"></i> Hosting</li>
+                    <li><i class="fa fa-info-circle"></i> Relatime Database</li>
+                    <li><i class="fa fa-info-circle"></i> File Storage</li>
+                    <li><i class="fa fa-info-circle"></i> Firestore Database</li>
+                    <li><i class="fa fa-info-circle"></i> Authentication</li>
+                </ul>
+            </div>
+
+            <div class="infoHosting">                                
+                <h3>
+                    <button class="codeSnippet" style="font-size:14px"><i class="fa fa-info-circle"></i> </button>
+                    <i class="fa fa-server" aria-hidden="true"></i> 
+                    Hosting
+                </h3>
+                <h3>This site is hosted on firebase. You can use firebase hosting to host your SPA's and even full blown web application written in angular for exmaple.</h3>
+            </div>            
+
+            <div class="info">                
+                <h3>
+                    <button onclick="location.href = 'snippets/tmp.txt'" style="font-size:14px"><i class="fa fa-info-circle"></i> </button>
+                    <i class="fa fa-database" aria-hidden="true"></i> 
+                    Realtime Database
+                </h3>
+                <h3>The information sent from this form will be saved in the Firebase realtime databse.</h3>
+            </div>
+            <div class="contact">
+                <div class="alert">Your message has been sent</div>                
+                <form id="contactForm">
+                    <p>
+                        <label>Name</label>
+                        <input type="text" name="name" id="name" required>
+                    </p>
+                    <p>
+                        <label>Company</label>
+                        <input type="text" name="company" id="company">
+                    </p>
+                    <p>
+                        <label>Email Address</label>
+                        <input type="email" name="email" id="email" required>
+                    </p>
+                    <p>
+                        <label>Phone Number</label>
+                        <input type="text" name="phone" id="phone">
+                    </p>
+                    <p class="full">
+                        <label>Message</label>
+                        <textarea name="message" rows="5" id="message"></textarea>
+                    </p>
+                    <p class="full">
+                        <button type="submit">Submit</button>
+                    </p>                    
+                </form>                                                
+            </div>
+
+            <div class="info">
+                <h3>
+                    <button style="font-size:14px"><i class="fa fa-info-circle"></i> </button>
+                    <i class="fa fa-archive" aria-hidden="true"></i>
+                    File Storage
+                </h3>
+                <h3>Choose a file and it will be uploaded to Firebase file sotrage.</h3>
+            </div>
+            <div class="storageSection">                    
+                <input type="file" value="upload" id="fileUpload"/>
+            </div>
+
+            <div class="info">
+                <h3>
+                    <button style="font-size:14px"><i class="fa fa-info-circle"></i> </button>
+                    <i class="fa fa-database" aria-hidden="true"></i> 
+                    Firestore Database
+                </h3>
+                <h3>Using the form at the Realtime Database section, the information will also be uploaded to firestore. Use the button to perofrm a query that gets a document back by a given name.</h3>
+            </div>
+            <div class="firestoreSection">
+                <label>Get the form for the name:</label>
+                <input type="text" id="nameToQuery">
+                <button id="queryFirestore">Get Document</button>
+                <label>Result:</label>
+                <textarea rows="5" id="firestoreQueryResult"></textarea> 
+            </div>
+
+            <div class="info">
+                <h3>
+                    <button style="font-size:14px"><i class="fa fa-info-circle"></i> </button>
+                    <i class="fa fa-sign-in" aria-hidden="true"></i> 
+                    Authentication
+                </h3>
+                <h3>Firebase lets you manage users and help you with the authentication process. Several authentication providers are enabled by firebase including: Google, Facebook, Github, email/password etc. To enable a provider you have to manually choose it from the Firebase panel. In this part we can see an implementation of authentication using Google.</h3>
+            </div>
+            <div class="authenticationSection">                             
+                <label id="signedUserName">Signed in user: NONE</label>   
+                <img id="userImage">
+                <button class="signInButton" id="signIn">Sign In With Google</button>
+                <button class="signOutButton" id="signOut">Sign Out</button>
+            </div>
+
+            <div class="info">
+                <h3>
+                    <button style="font-size:14px"><i class="fa fa-info-circle"></i> </button>
+                    <i class="fa fa-cloud" aria-hidden="true"></i> 
+                    Cloud Functions
+                </h3>
+                <h3>Firebase cloud function can be used to run backend code without dealing with servers and application servers. Click the echo button to trigger a deployed cloud function.</h3>
+            </div>
+            <div class="cloudFunctionsSection">                             
+                <h4>Place this url in your browser:</h4>
+                <h4>https://us-central1-fir-by-example.cloudfunctions.net/echoMessage?text=</h4>                
+                <h4>Add some text after the '=' sign to echo this text back</h4>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://www.gstatic.com/firebasejs/4.5.1/firebase.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/4.5.1/firebase-firestore.js"></script>
+    <script src="main.js"></script>
+</body>
+</html>
