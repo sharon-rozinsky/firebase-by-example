@@ -1,10 +1,11 @@
 # Firebase By Example
 This repository can help you with basic Firebase introduction.
 You can follow my blog post here: 
-The post has 2 parts, one is more of an explanation of Firebase and the other is a more practical guide describing what this code does.
-Use this code as a template, create your own Firebase project, add your firebase configuration in public/main.js and see how the different Firebase features work.
+You can use this code as a template, create your own Firebase project, add your firebase configuration in public/main.js and see how the different Firebase features work.
 
 You can also checkout the deployed webpage as my Firebase app in here: fir-by-example.firebaseapp.com
+To see the relevant part of code that uses a feature you can click the info icon next to every title.
+Some features will not work due to security restrictions I applied (running on the free tier).
 
 # Additional Resources
 - The official Firebase documentation site: https://firebase.google.com/docs/
